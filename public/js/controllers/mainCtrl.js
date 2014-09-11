@@ -3,6 +3,8 @@ angular.module('mainCtrl', [])
 	.controller('mainCtrl', function($scope, $http, Card) {
 		// object to hold all the data for the new comment form
 		$scope.cardData = {};
+		$scope.cardsCount = 0;   //not used
+		$scope.cardsPerPage = 30;  //not used
 		
 		$scope.select = function(card) {
 		  $scope.cardData = card;
