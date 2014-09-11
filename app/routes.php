@@ -11,7 +11,14 @@
 |
 */
 
+Route::group(array('prefix'=>'api'), function() {
+  Route::resource('cards','CardController'/*
+  ,array('only'=>array('index', 'store', 'destroy')*/
+  );
+});
+
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
 });
+
