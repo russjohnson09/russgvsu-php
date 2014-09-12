@@ -13,11 +13,13 @@ class CardTableSeeder extends Seeder
     Card::create(array('front' => 'hello',
                       'back' => 'konnichiha',
                       'count' => 10));
+    /*    
     for ($i=0; $i<1000; $i++) {
         Card::create(array('front' => 'hello',
                       'back' => 'konnichiha',
                       'count' => 10));
     }
+    */
     /*
     
     */

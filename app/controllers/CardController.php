@@ -31,10 +31,9 @@ class CardController extends \BaseController {
 	 */
 	public function store()
 	{
-		$card = new Card;
+    $card = new Card;
     $card->fill(Input::all());
     $card->save();
-		
 		return Response::json(array('success' => true));
 	}
 
@@ -59,7 +58,7 @@ class CardController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+
 	}
 
 
@@ -71,7 +70,10 @@ class CardController extends \BaseController {
 	 */
 	public function update($id)
 	{
-	  
+    $card = Card::find($id);
+    $card->fill(Input::all());
+    $card->save();
+		return Response::json(array('success' => true));
 	}
 
 
