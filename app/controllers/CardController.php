@@ -9,7 +9,8 @@ class CardController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Response::json(Card::get());
+	  //$sides = Card::find($cid)->sides;
+		return Response::json(Card::with("sides")->get());
 	}
 
 

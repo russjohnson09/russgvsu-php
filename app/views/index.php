@@ -53,12 +53,14 @@
 	</div>
 
 	<div class="cardList" ng-hide="isLoading" ng-repeat="card in cards">
+	  <!-- {{card}} -->
 	  <div ng-click="select(card)" 
 	    ng-class="$parent.cardData.id==card.id ? 'selected' : ''">
 		  <h3>Card #{{ card.id }} <small>by {{ card.author }} reviewed 
 		  {{ card.count }}</h3>
-		  <p>{{ card.front }}</p>
-		  <p>{{ card.back }}</p>
+		  <div class="sides" ng-hide="isLoading" ng-repeat="side in card.sides">
+		    <h1>{{side.descriptor}}</h1>
+		      <div>{{side.text}}</div>
 		  <pre></pre>
 	  </div>
 
@@ -79,6 +81,10 @@
 	  }
 	  .selected {
 	    background-color: blue;
+	  }
+	  
+	  .sides h1 {
+	    font-size: 10px;
 	  }
 	</style>
 
